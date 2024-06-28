@@ -24,7 +24,8 @@ void UStateMachineComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	UpdateStateToDefault(false);
+	//UpdateStateToDefault(false);
+	OnRep_State();
 }
 
 void UStateMachineComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
