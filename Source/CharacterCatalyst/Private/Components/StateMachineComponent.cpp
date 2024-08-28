@@ -57,6 +57,18 @@ void UStateMachineComponent::UpdateStateToPrevious(bool bForceReplication)
 	UpdateState(PreviousState, bForceReplication);
 }
 
+bool UStateMachineComponent::SetStateLocked(uint8 InState, bool bNewValue, bool bForceExitOnLock)
+{
+	if (bNewValue)
+	{
+		return LockState(InState, bForceExitOnLock);
+	}
+	else
+	{
+		return UnlockState(InState);
+	}
+}
+
 bool UStateMachineComponent::LockState(uint8 StateToLock, bool bForceExit)
 {
 	if (IsStateLocked(StateToLock)) return false; // already locked
