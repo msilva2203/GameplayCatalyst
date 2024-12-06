@@ -36,9 +36,14 @@ public:
 	void UpdateStateToPrevious(bool bForceReplication = true);
 
 	UFUNCTION(BlueprintCallable, Category = "State Machine")
+	bool SetStateLocked(uint8 InState, bool bNewValue, bool bForceExitOnLock = true);
+
+	UFUNCTION(BlueprintCallable, Category = "State Machine", meta = (DeprecatedFunction), 
+		meta = (DeprecationMessage = "Use the new SetStateLocked() function"))
 	bool LockState(uint8 StateToLock, bool bForceExit = true);
 
-	UFUNCTION(BlueprintCallable, Category = "State Machine")
+	UFUNCTION(BlueprintCallable, Category = "State Machine", meta = (DeprecatedFunction), 
+		meta = (DeprecationMessage = "Use the new SetStateLocked() function"))
 	bool UnlockState(uint8 StateToUnlock);
 
 	UFUNCTION(BlueprintCallable, Category = "State Machine")
