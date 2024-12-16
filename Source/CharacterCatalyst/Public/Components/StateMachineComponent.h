@@ -59,6 +59,7 @@ public:
 	bool IsCurrentState(uint8 InState);
 
 public:
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "State Machine")
 	uint8 DefaultState;
 
